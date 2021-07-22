@@ -7,7 +7,7 @@
     "start": "node dist/src/app.js",
     "build": "tsc && npm run copy",
     "copy": " copyfiles ./**/*.hbs .css ./**/*.png ./**/*.jpg dist/",
-    "watch-debug": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"cyan.bold,green.bold\" \"tsc --watch\"  \"nodemon --inspect dist/src/app.js -e js,hbs\""
+    "dev": "npm run build && concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"cyan.bold,green.bold\" \"tsc --watch\"  \"nodemon --inspect dist/src/app.js -e js,hbs\""
   },
   "keywords": [],
   "author": "",
@@ -16,7 +16,8 @@
     "concurrently": "^6.2.0",
     "express": "^4.17.1",
     "hbs": "^4.1.2",
-    "request": "^2.88.2"
+    "request": "^2.88.2",
+    "typescript": "^4.3.5"
   },
   "devDependencies": {
     "@types/express": "^4.17.13",
