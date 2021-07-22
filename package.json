@@ -2,20 +2,26 @@
   "name": "web-server",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/app.ts",
   "scripts": {
     "start": "node src/app.js",
-    "dev": "nodemon src/app.js -e js,hbs"
+    "build": "tsc && npm run copy",
+    "copy": " copyfiles ./**/*.hbs .css ./**/*.png ./**/*.jpg dist/",
+    "watch-debug": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"cyan.bold,green.bold\" \"tsc --watch\"  \"nodemon --inspect dist/src/app.js -e js,hbs\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "concurrently": "^6.2.0",
     "express": "^4.17.1",
     "hbs": "^4.1.2",
     "request": "^2.88.2"
   },
   "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/hbs": "^4.0.1",
+    "@types/request": "^2.48.6",
     "nodemon": "^2.0.12"
   }
 }
