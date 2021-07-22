@@ -4,7 +4,7 @@
   "description": "",
   "main": "src/app.ts",
   "scripts": {
-    "start": "node src/app.js",
+    "start": "node dist/src/app.js",
     "build": "tsc && npm run copy",
     "copy": " copyfiles ./**/*.hbs .css ./**/*.png ./**/*.jpg dist/",
     "watch-debug": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"cyan.bold,green.bold\" \"tsc --watch\"  \"nodemon --inspect dist/src/app.js -e js,hbs\""
