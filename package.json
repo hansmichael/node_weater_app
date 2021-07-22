@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node dist/src/app.js",
     "build": "tsc && npm run copy",
-    "copy": " copyfiles ./**/*.hbs .css ./**/*.png ./**/*.jpg dist/",
+    "copy": " copyfiles ./**/*.hbs ./**/*.css ./**/*.png ./**/*.jpg dist/",
     "dev": "npm run build && concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"cyan.bold,green.bold\" \"tsc --watch\"  \"nodemon --inspect dist/src/app.js -e js,hbs\""
   },
   "keywords": [],
